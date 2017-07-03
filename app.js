@@ -1,5 +1,2 @@
-var loopback = require('loopback');
-var boot = require('loopback-boot');
-var app = module.exports = loopback();
-
-boot(app, __dirname);
+var app = require('./server/server.js')  
+app.start(); 
