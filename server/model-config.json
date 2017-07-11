@@ -13,7 +13,8 @@
       "./mixins"
     ]
   },
-  "note": {
-    "dataSource": "db"
+  "vincoli": {
+    "dataSource": "db",
+    "public": true
   }
 }

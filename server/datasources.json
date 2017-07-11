@@ -1,6 +1,6 @@
 {
   "db": {
-    "name": "db",
-    "connector": "memory"
+    "url":"mongodb://testusr:iniziale@ds149122.mlab.com:49122/vincoli",
+    "connector": "mongodb"
   }
 }

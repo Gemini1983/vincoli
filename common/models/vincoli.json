@@ -1,0 +1,52 @@
+{
+  "name": "vincoli",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "foglio": {
+      "type": "string",
+      "required": true
+    },
+    "particella": {
+      "type": "string",
+      "required": true
+    },
+    "sub": {
+      "type": "string"
+    },
+    "TIPOLOGIA": {
+      "type": "string"
+    },
+    "tipologia_odierna": {
+      "type": "string"
+    },
+    "INDIRIZZO_o_superficie": {
+      "type": "string"
+    },
+    "Diritto_tramandato": {
+      "type": "string"
+    },
+    "diritto2013": {
+      "type": "string"
+    },
+    "SUCCESSIONE_904": {
+      "type": "string"
+    },
+    "PRELIMINARE_21_3_2013": {
+      "type": "string"
+    },
+    "PRELIMINARE_24_11_2013": {
+      "type": "string"
+    },
+    "TRASCRIZIONE_SUCCESSIONE": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
