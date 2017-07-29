@@ -1,5 +1,6 @@
 {
   "name": "vincoli",
+  "plural":"vincoli",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
