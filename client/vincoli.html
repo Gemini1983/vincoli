@@ -1,6 +1,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
+
 <body>
 
     <div ng-app="myApp" ng-controller="customersCtrl">
@@ -15,14 +16,16 @@
         var app = angular.module('myApp', []);
         app.controller('customersCtrl', function ($scope, $http) {
 
-            var call = {
+            var call2 = {
                 method: "GET",
-                url: "https://shrouded-shore-58646.herokuapp.com/api/vincoli?filter={'where':{'and':[{'foglio':2},{'particella':12}]}}";
+                url: "https://shrouded-shore-58646.herokuapp.com/api/vincoli?filter={\"where\":{\"and\":[{\"foglio\":2},{\"particella\":12}]}}"
             };
 
-            $http.get(call).then(function (response) {
-                $scope.myData = response.data;
+            $http(call2).then(function (response) {
+
+                $scope.myData = response.data[0];
             });
+
         });
     </script>
 
