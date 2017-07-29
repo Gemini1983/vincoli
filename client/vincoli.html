@@ -1,0 +1,31 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="customersCtrl">
+
+        <body ng-controller="Ctrl">
+            <pre>{{myData | json}}</pre>
+        </body>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function ($scope, $http) {
+
+            var call = {
+                method: "GET",
+                url: "https://shrouded-shore-58646.herokuapp.com/api/vincoli?filter={'where':{'and':[{'foglio':2},{'particella':12}]}}";
+            };
+
+            $http.get(call).then(function (response) {
+                $scope.myData = response.data;
+            });
+        });
+    </script>
+
+</body>
+
+</html>
