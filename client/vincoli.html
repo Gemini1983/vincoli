@@ -31,6 +31,46 @@
         background-color: #f2f2f2;
         padding: 20px;
     }
+
+    .table-bordered td,
+    .table-hover tbody tr:hover td,
+    .table-hover tbody tr:hover th {
+        background-color: white;
+    }
+
+    .site-title {
+        font-size: 2.441em;
+        font-style: italic;
+        font-weight: bold;
+        margin: 0;
+        font-family: Lora, Garamond, serif;
+    }
+
+    .site-title a,
+    .site-title {
+        color: #f78769;
+        text-decoration: none;
+    }
+
+    .loader {
+        border: 16px solid white;
+        /* Light grey */
+        border-top: 16px solid #f78769;
+        /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
 <head>
@@ -44,52 +84,101 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background-color: #f2f2f2;">
     <div ng-app="myApp" ng-controller="customersCtrl">
-        <h1> Stato particella </h1>
+
+
+
+        <div class="divloader" ng-show="flagLoader">
+            <h1 class="site-title">Ricerca ...</h1>
+            <div class="loader"></div>
+        </div>
+
+
+
 
 
         <form ng-show="flagInput">
-            <div class="form-group">
+            <h1 class="site-title col-xs-12">Inserisci i dettagli dell'immobile:</h1>
+
+            <div class="form-group col-xs-6">
                 <label for="foglio">Numero Foglio:</label>
                 <input type="number" class="form-control" id="foglio" ng-model="foglio">
             </div>
-            <div class="form-group">
+
+            <div class="form-group col-xs-6">
                 <label for="particella">Numero Particella:</label>
                 <input type="number" class="form-control" id="particella" ng-model="particella">
             </div>
-            <button type="submit" data-ng-click="callVisura(foglio,particella)" class="btn btn-default">Cerca</button>
+            <div class="col-xs-4 ">
+                <button type="submit" data-ng-click="callVisura(foglio,particella)" class="btn btn-default">Cerca!</button>
+            </div>
+
         </form>
 
 
-
-
         <div class="container" ng-show="flagVisura">
-            <h2>Risultato Visura</h2>
-            <table class="table table-hover">
+            <h1 class="site-title">Risultato Controllo Vincoli</h1>
+            <table class="table table-bordered">
                 <thead>
-                    <tr>
-                        <th>Descrizione Campo</th>
-                        <th>Valore</th>
-                    </tr>
+
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Foglio</td>
+                        <th scope="row">Foglio</th>
                         <td>{{myData.foglio}}</td>
                     </tr>
                     <tr>
-                        <td>particella</td>
+                        <th scope="row">Particella</th>
                         <td>{{myData.particella}}</td>
                     </tr>
-                    <tr>
-                        <td>Tipologia</td>
+                    <tr ng-show="myData.sub">
+                        <th scope="row">Sub</th>
+                        <td>{{myData.sub}}</td>
+                    </tr>
+                    <tr ng-show="myData.tipologia">
+                        <th scope="row">Tipologia d'impianto</th>
                         <td>{{myData.tipologia}}</td>
                     </tr>
-
-                    <tr>
-                        <td>Successione 904</td>
+                    <tr ng-show="myData.tipologia_odierna">
+                        <th scope="row">Tipologia odierna</th>
+                        <td>{{myData.tipologia_odierna}}</td>
+                    </tr>
+                    <tr ng-show="myData.indirizzo">
+                        <th scope="row">Indirizzo o Superficie</th>
+                        <td>{{myData.indirizzo}}</td>
+                    </tr>
+                    <tr ng-show="myData.diritto_tramandato">
+                        <th scope="row">Diritto tramandato nel tempo</th>
+                        <td>{{myData.diritto_tramandato}}</td>
+                    </tr>
+                    <tr ng-show="myData.diritto_2013">
+                        <th scope="row">Diritto dichiarato unilateralmente dal 2013 e vantato in sede giurisdizionale</th>
+                        <td>{{myData.diritto_2013}}</td>
+                    </tr>
+                    <tr ng-show="myData.successione_904">
+                        <th scope="row">Successione n. 904 e ulteriori modifiche ed integrazioni a decorrere dall'1/3/2013 e presentata il
+                            27/5/2015
+                        </th>
                         <td>{{myData.successione_904}}</td>
+                    </tr>
+                    <tr ng-show="myData.preliminare_marzo2013">
+                        <th scope="row">Preliminare di Compravendita del 21/3/2013</th>
+                        <td>{{myData.preliminare_marzo2013}}</td>
+                    </tr>
+                    <tr ng-show="myData.preliminare_novembre2013">
+                        <th scope="row">Preliminare di Compravendita del 24/11/2013 per la cessione alla società eredi AGUET dei diritti
+                            gravanti sui fondi assoggettati al diritto atipico di Livellario</th>
+                        <td>{{myData.preliminare_novembre2013}}</td>
+                    </tr>
+                    <tr ng-show="myData.trascrizione_successione">
+                        <th scope="row">Trascrizione Successione del 1/3/2013 presentata il 27/5/2015 inerenti i fogli 2, 3, 5, 6, 7, 8,
+                            38 e Mappa Urbana Del Comune di S.Felice Circeo.</th>
+                        <td>{{myData.trascrizione_successione}}</td>
+                    </tr>
+                    <tr ng-show="myData.successione_2000">
+                        <th scope="row">Successione del 5 maggio 2000 eredi di Elena AGUET, coniugata in BLANC ed integrazioni</th>
+                        <td>{{myData.successione_2000}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -99,8 +188,9 @@
 
 
         <div class="errore" ng-show="flagErrore">
-            <h2>Nessuna dato trovato per questa particella e per questo foglio</h2>
-            <button type="submit" data-ng-click="nuovaVisura()" class="btn btn-default">Nuova Visura</button>
+            <h1 class="site-title">Nessuna dato trovato per questa particella e per questo foglio</h1>
+            <div></div>
+            <button type="submit" data-ng-click="nuovaVisura()" class="btn center btn-default">Nuova Visura</button>
 
         </div>
 
@@ -115,6 +205,7 @@
 
             $scope.init = function () {
                 $scope.flagInput = true;
+                $scope.flagLoader = false;
                 $scope.flagVisura = false;
                 $scope.flagErrore = false;
             };
@@ -126,6 +217,8 @@
             };
 
             $scope.callVisura = function (foglio, particella) {
+                $scope.flagInput = false;
+                $scope.flagLoader = true;
                 var call2 = {
                     method: "GET",
                     url: "https://shrouded-shore-58646.herokuapp.com/api/vincoli?filter={\"where\":{\"and\":[{\"foglio\":" + foglio + "},{\"particella\":" + particella + "}]}}"
@@ -133,19 +226,19 @@
                 $http(call2).then(function (response) {
                     var array = response.data;
                     if (typeof array != "undefined" && array != null && array.length > 0) {
-                        ;
+                        $scope.flagLoader = false;
                         $scope.myData = response.data[0];
                         $scope.flagInput = false;
                         $scope.flagVisura = true;
 
                     } else {
-
+                        $scope.flagLoader = false;
                         $scope.flagInput = false;
                         $scope.flagErrore = true;
 
                     }
                 }, function () {
-
+                    $scope.flagLoader = false;
                     $scope.flagInput = false;
                     $scope.flagErrore = true;
 
