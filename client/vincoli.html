@@ -110,7 +110,7 @@
                 <label for="particella">Numero Particella:</label>
                 <input type="number" class="form-control" id="particella" ng-model="particella">
             </div>
-            <div class="col-xs-4 ">
+            <div class=" text-center">
                 <button type="submit" data-ng-click="callVisura(foglio,particella)" class="btn btn-default">Cerca!</button>
             </div>
 
@@ -182,7 +182,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button type="submit" data-ng-click="nuovaVisura()" class="btn btn-default">Nuova Visura</button>
+            <button type="submit" data-ng-click="nuovaVisura()" class="btn btn-default">Nuovo Controllo</button>
         </div>
 
 
@@ -190,7 +190,7 @@
         <div class="errore" ng-show="flagErrore">
             <h1 class="site-title">Nessuna dato trovato per questa particella e per questo foglio</h1>
             <div></div>
-            <button type="submit" data-ng-click="nuovaVisura()" class="btn center btn-default">Nuova Visura</button>
+            <button type="submit" data-ng-click="nuovaVisura()" class="btn center btn-default">Nuovo Controllo</button>
 
         </div>
 
