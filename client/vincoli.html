@@ -183,6 +183,81 @@
                 </tbody>
             </table>
             <button type="submit" data-ng-click="nuovaVisura()" class="btn btn-default">Nuovo Controllo</button>
+            <button type="submit" data-ng-click="leggiFaq()" class="btn btn-default">Leggi le FAQ</button>
+        </div>
+
+
+
+        <div class="container" ng-show="flagFAQ">
+            <h1 class="site-title">FAQ</h1>
+            <table class="table table-bordered">
+               <p> Nel riscontrare quesiti e perplessità più frequentemente espresse dagli interessati sono state predisposte le seguenti domande
+                del signor “Rossi” e relative risposte che se pur generali permettono al lettore di avere una migliore indirizzo
+                per incominciare a valutare le opportuno decisioni.</p>
+                <thead>
+                    <tr>
+                        <th>Domanda</th>
+                        <th>Risposta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["1"]}}</th>
+                        <td>{{FAQ[1]["1"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["2"]}}</th>
+                        <td>{{FAQ[1]["2"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["4"]}}</th>
+                        <td>{{FAQ[1]["4"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["5"]}}</th>
+                        <td>{{FAQ[1]["5"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["6"]}}</th>
+                        <td>{{FAQ[1]["6"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["7"]}}</th>
+                        <td>{{FAQ[1]["7"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["8"]}}</th>
+                        <td>{{FAQ[1]["8"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["9"]}}</th>
+                        <td>{{FAQ[1]["9"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["10"]}}</th>
+                        <td>{{FAQ[1]["10"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["11"]}}</th>
+                        <td>{{FAQ[1]["11"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["12"]}}</th>
+                        <td>{{FAQ[1]["12"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["13"]}}</th>
+                        <td>{{FAQ[1]["13"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{FAQ[0]["14"]}}</th>
+                        <td>{{FAQ[1]["14"]}}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+            <button type="submit" data-ng-click="nuovaVisura()" class="btn btn-default">Nuovo Controllo</button>
         </div>
 
 
@@ -208,12 +283,52 @@
                 $scope.flagLoader = false;
                 $scope.flagVisura = false;
                 $scope.flagErrore = false;
+                $scope.flagFAQ = false;
+                $scope.FAQ = [
+                    {
+                        "1": "Sono il signor “ROSSI”, ho trovato che il bene che possiedo risulta che nella recente visura catastale è con “diritto di concedente” a favore di soggetti AGUET e BLANC: che vuol dire?",
+                        "2": "Sono il signor “ROSSI”, il mio bene è stato sempre indicato in catasto quale soggetto al “diritto di concedente” a favore degli AGUET e BLANC. Se ad oggi non faccio nulla rimane tutto come è stato da più di 100 anni?",
+                        "4": "Sono il signor “ROSSI”, recentemente ho acquistato una villetta su due livelli con giardino ed ho accettato di versare una parte del costo al venditore livellario, mentre ho versato una somma sostanziosa all’asse eredi AGUET/BLANC firmando così una transazione. Posso recuperare la somma che ho versato in più agli eredi AGUET/BLANC? Ci possono essere ulteriori conseguenze ed effetti per quanto ho sottoscritto di mia volontà?",
+                        "5": "Sono il signor “ROSSI”, sono stato in banca per chiedere un mutuo offrendo quale garanzia l’immobile che ho costruito in parte con regolare licenza negli anni ’60/70 e in parte abusivamente (poi condonato con l’apposita legge del 1987). Dopo qualche giorno l’Istituto finanziario mi ha rifiutato la concessione del prestito motivando che il terreno su cui ho costruito non è il mio perché c’è il “livello baronale” e per diritto di accessione anche la casa non sarebbe la mia E’ possibile tutto ciò?",
+                        "6": "Sono il signor “ROSSI”, avrei deciso di recarmi presso un consulente legale al fine di far cancellare il “livello baronale” quale documentazione o cosa devo portargli preliminarmente per incominciare a capire quale è la situazione e la soluzione migliore?",
+                        "7": "Sono il signor “ROSSI”, avrei deciso di sceglier un consulente legale per sapere come risolvere il mio caso nel quale risulto possessore di un terreno dove grava il “livello baronale” e dove ci ho costruito sopra la casa per me e i miei figli, siccome in Italia esistono vari gradi di giudizio, devo scegliere un avvocato con una particolare specializzazione?",
+                        "8": "Sono il signor “ROSSI”, ho ritirato presso il catasto il certificato storico di trasporto al 1926 e da tale documento risulta che il mio terreno a quel tempo non era gravato dal “Livello Baronale”, cosa vuol dire e che devo fare?",
+                        "9": "Sono il signor “ROSSI”, ho ritrovato nelle mio carteggio una sentenza di affrancazione fatta in passato sul mio terreno, cosa devo fare per far estinguere il vincolo del “Livello Baronale” che è stato rimesso recentemente?",
+                        "10": "Sono il signor “ROSSI”, ho trovato recentemente riacceso sul il mio terreno il vincolo del “Livello Baronale” nonostante lo abbia levato a seguito di una sentenza di usucapione emessa dal giudice competente, cosa devo fare?",
+                        "11": "Sono il signor “ROSSI”, ho trovato recentemente un atto dove mio nonno acquistò l’intera proprietà” dal Barone AGUET e nonostante ciò sul mio terreno è stato rimesso il vincolo del “Livello Baronale”, cosa devo fare?",
+                        "12": "Sono il signor “ROSSI”, ho trovato recentemente un atto dove mio nonna nel 1920 firmò un contratto di enfiteusi per una casa popolare nel centro storico con atto di notaio firmato dal Barone AGUET. Oggi sull’appartamento mi trovo  il vincolo del “Livello Baronale”, cosa devo fare?",
+                        "13": "Sono il signor “ROSSI”, vorrei sapere se esiste l’Enfiteusi nel comune di San Felice Circeo?",
+                        "14": "Sono il signor “ROSSI”, vorrei sapere se l’ente comunale può aprire un contenzioso contro l’asse AGUET/BLANC per difendere i diritti dei cittadini di San Felice Circeo?"
+                    },
+                    {
+                        "1": "Ricordando che la visura catastale, sino ad oggi, non ha valore di prova, ma ha il compito di indicare con delle annotazioni quale è l’atto/i per il quale sono stati iscritti gli odierni soggetti che possiedono il bene. Si ritiene che Lei possiede un immobile sul quale può vantare solo l’utile dominio e pertanto i soggetti AGUET e BLANC detengono il diretto dominio, ovvero possiedono quello che oggi è assimilato alla “nuda proprietà”.",
+                        "2": "Purtroppo le norme con il tempo si evolvono e mentre in passato era possibile che ogni singolo decideva di sottostare a dichiarare l’esistenza di una dubbia enfiteusi (che in molti casi sembrerebbe che non c’è), oggi non è più così conveniente perché alcune agevolazioni sono state cancellate e al loro posto sono stati aggiunti costi maggiori. La recente trasformazione del diritto atipico di livello in “enfiteusi” che la Agenzia delle Entrate” ha accettato quale dichiarazione degli eredi AGUET/BLANC gli ha permesso di riscuotere dei denari e presto di poter vendere tale diritto a chiunque. Ad esempio possiamo dire che la base di calcolo dei costi per l’enfiteusi un tempo era la sola rendita catastale, oggi a questa si aggiunge una rivalutazione per un equo saggio d’interesse. Inoltre, sembrerebbe certo che nel 2018 sarà riformato il catasto raddoppiando le rendite catastali delle case, quindi, se il giudice tramite una perizia ad oggi può stabilire mediamente per un appartamento di 80 mq. una indennità di 12/13.000 euro, dopo il 2018 si passerà a non meno di 25.000 euro. Inoltre, è emerso che in altri casi scoppiati in Italia sia stato chiesto dagli ex nobili che i cittadini possessori riprendessero a pagare l’affitto anche su case costruite interamente dal malcapitato. L’unica agevolazione rimasta è che se ad oggi si inizia un contenzioso e questo termina tra dieci anni, in caso fosse deciso di estinguere una enfiteusi si pagherà sempre con il sistema più favorevole al cittadino che per ora è il sistema che oggi è applicato. Pertanto sta’ ad ogni singolo cittadino decidere se correre il rischio o no di non fare nulla.",
+                        "4": "Avendo fatto una transazione non può recuperare eventuali somme versate in più, salvo che l’accordo sottoscritto non lo preveda in una clausola espressamente prevista per questo caso. Avendo versato volontariamente una somma agli eredi AGUET/BLANC si rimane esposti ad un futuro accertamento fiscale induttivo dell’Agenzia delle Entrate che potrebbe obiettare che è stata acquistata una “nuda proprietà” che sul mercato ha un valore ben superiore e, pertanto, si verrebbe ulteriormente gravati da una sanzione e dai costi di un successivo contenzioso tributario. ATTENZIONE a cosa si firma in questi casi e mai senza l’assistenza di un consulente legale specializzato. Quanto sopra non accade se la somma è stabilita da un giudice.",
+                        "5": "La banca si è comportata correttamente in quanto Lei garantirebbe un prestito con un immobile che per quanto prevede la norma è stato costruito su un terreno che non è interamente Suo e, quindi, tutto ciò che si costruisce su un terreno diventa per diritto di accessione di proprietà di colui che ha, in questo caso, il diritto assimilato alla “nuda proprietà” ovvero l’immobile sarebbe diventato di proprietà del concedente eredi AGUET/BLANC. Se vorrà accedere al prestito richiesto dovrà prima risolvere il problema attraverso un legale che saprà consigliarla al meglio.",
+                        "6": "Innanzi tutto deve portare la copia dell’atto con il quale Lei ha acquisito l’odierno titolo di possesso (atto di compravendita/o atto di successione per causa di morte, assegnazione d’asta, ecc.) e deve portare il certificato catastale di “trasporto” alla data del 1926.  Quest’ultimo documento non lo deve confondere con il certificato storico catastale ordinario che non ha alcun valore e quindi non è utile per le decisioni.",
+                        "7": "A causa di alcune sentenze della “Corte Costituzionale”, i livelli baronali che in passato potevano essere riscatti con poche lire, oggi sono stati rivalutati e, pertanto, è più costoso eliminarli – ATTENZIONE: sempreché il giudice incaricato a risolvere la questione decida che tale diritto di livello è riconducibile all’enfiteusi.  Pertanto è opportuno avvalersi di un avvocato o studio legale che oltre ad essere specializzato in Cassazione, sia anche specializzato Costituzionalista. Questo perché, data la complessità della materia, iniziare una causa col vantare diritti già resi nulli dalla Corte Costituzionale significherebbe perdere già in partenza il contenzioso anche se si andasse in appello e poi in cassazione (purtroppo, il cittadino pur avendo ragione, perde la causa perché spesso sceglie la via sbagliata - accade spesso).",
+                        "8": "Gli eredi AGUET hanno commesso un errore, probabilmente una svista, quindi, tramite il legale di fiducia è necessario richiedere agli eredi la correzione della successione e della voltura catastale.",
+                        "9": "Nel caso sia stata fatta in passato una “affrancazione”, gli atti che sono stati emessi dal giudice competente vanno controllati dal legale di fiducia perché alcuni di questi sono assoggettati a delle particolari procedure che se non successivamente eseguite possono rendere nulla la sentenza di affrancazione (pur avendo versato delle somme, ad oggi non sono servite a nulla). Nel caso di nullità si dovrà scegliere quale sia la migliore soluzione legale sempre ripartendo dal trovare i documenti di provenienza e farsi fare un nuovo certificato storico catastale di trasporto al 1926 il tutto per far meglio capire la situazione al proprio avvocato. Qualora l’atto di affrancazione risultasse valido si dovrà richiedere all’asse eredi AGUET di correggere la successione e le volture catastali.",
+                        "10": "Nel caso sia stata già emessa una sentenza di “usucapione”, per l’effetto di successive sentenze della Corte Costituzionale è avvenuto che alcune tipologie di usucapione sono “annullabili”, pertanto come sopra già indicato si dovrà preliminarmente usufruire di un consulenza legale prima di mettere in atto ogni iniziativa perché se si è avventati si potrebbero solo fare  danni e senza saperlo andare contro i propri interessi.",
+                        "11": "Gli eredi AGUET hanno commesso un errore, probabilmente una svista, quindi, tramite il legale di fiducia è necessario richiedere la correzione della successione e della voltura catastale.",
+                        "12": "Innanzi tutto deve controllare bene a cosa si riferisce il contratto in quanto le case nel centro storico di allora erano composte da una stanza tutto usi (ingresso, salone, cucina, ecc.) e di una sola camera da letto per un totale di 1,5 vani. Pertanto se ad oggi Lei ha più di due vani e possibile che l’immobile sia il risultato della fusione di due appartamentini e potrebbe essere che solo su uno di essi esiste il contratto di enfiteusi. Comunque dovrà sempre rivolgersi ad un legale di fiducia con l’ausilio dell’ultimo atto di provenienza e il certificato storico di trasporto catastale all’anno 1926.",
+                        "13": "Da un recente monitoraggio della problematica risulta che a seguito dell’acquisto del Feudo di San Felice, il barone Aguet James stipulò alcuni specifici contratti di enfiteusi ai primi del ‘900, mentre la maggior parte degli abitanti già da più di un secolo si trasmettevano tali beni (terre e case) sin da quando era proprietaria la Reverenda Camera Apostolica. Di conseguenza per questi proprietari (che sono la maggior parte) si tratterebbe di un diritto atipico del passato sul quale ad oggi è competente solo il giudice che è chiamato a stabilire se ci sia veramente Enfiteusi (obbligatoriamente attivato con apposito contenzioso). Spesso non si trovano mai le ricevute dei pagamenti del canone di questo diritto atipico e, quindi, gli AGUET avrebbero la difficoltà a dimostrare al giudice quanto vorrebbero. In tal modo si aprono molteplici scenari dove l’avvocato esperto costituzionalista ben sa dove andare a parare affinché il cittadino benefici dell’acquisizione dell’intera proprietà.",
+                        "14": "Il comune di San Felice è un ente pubblico e per quanto tale può solo agire per difendere il suo patrimonio pubblico, non può spendere risorse per difendere la proprietà del privato, pertanto spetta al singolo cittadino decidere cosa fare o quali rischi correre. A questo va aggiunto che le cause accese tra Enti pubblici e privati possono durare oltre 30 anni – basti ricordarsi quanto è durata a San Felice la questione degli “usi Civici”. Si può solo dire che il comune potrebbe dare l’esempio ed essere lo “scopritore di quale sia la migliore azione legale da far seguire”."
+                    }
+                ];
             };
 
             $scope.nuovaVisura = function () {
                 $scope.flagInput = true;
                 $scope.flagVisura = false;
                 $scope.flagErrore = false;
+                $scope.flagFAQ = false;
+            };
+
+            $scope.leggiFaq = function () {
+                $scope.flagVisura = false;
+                $scope.flagFAQ = true;
+
             };
 
             $scope.callVisura = function (foglio, particella) {
