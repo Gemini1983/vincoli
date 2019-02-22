@@ -67,6 +67,7 @@
         0% {
             transform: rotate(0deg);
         }
+
         100% {
             transform: rotate(360deg);
         }
@@ -111,7 +112,8 @@
                 <input type="number" class="form-control" id="particella" ng-model="particella">
             </div>
             <div class=" text-center">
-                <button type="submit" data-ng-click="callVisura(foglio,particella)" class="btn btn-default">Cerca!</button>
+                <button type="submit" data-ng-click="callVisura(foglio,particella)"
+                    class="btn btn-default">Cerca!</button>
             </div>
 
         </form>
@@ -153,11 +155,13 @@
                         <td>{{myData.diritto_tramandato}}</td>
                     </tr>
                     <tr ng-show="myData.diritto_2013">
-                        <th scope="row">Diritto dichiarato unilateralmente dal 2013 e vantato in sede giurisdizionale</th>
+                        <th scope="row">Diritto dichiarato unilateralmente dal 2013 e vantato in sede giurisdizionale
+                        </th>
                         <td>{{myData.diritto_2013}}</td>
                     </tr>
                     <tr ng-show="myData.successione_904">
-                        <th scope="row">Successione n. 904 e ulteriori modifiche ed integrazioni a decorrere dall'1/3/2013 e presentata il
+                        <th scope="row">Successione n. 904 e ulteriori modifiche ed integrazioni a decorrere
+                            dall'1/3/2013 e presentata il
                             27/5/2015
                         </th>
                         <td>{{myData.successione_904}}</td>
@@ -167,17 +171,20 @@
                         <td>{{myData.preliminare_marzo2013}}</td>
                     </tr>
                     <tr ng-show="myData.preliminare_novembre2013">
-                        <th scope="row">Preliminare di Compravendita del 24/11/2013 per la cessione alla società eredi AGUET dei diritti
+                        <th scope="row">Preliminare di Compravendita del 24/11/2013 per la cessione alla società eredi
+                            AGUET dei diritti
                             gravanti sui fondi assoggettati al diritto atipico di Livellario</th>
                         <td>{{myData.preliminare_novembre2013}}</td>
                     </tr>
                     <tr ng-show="myData.trascrizione_successione">
-                        <th scope="row">Trascrizione Successione del 1/3/2013 presentata il 27/5/2015 inerenti i fogli 2, 3, 5, 6, 7, 8,
+                        <th scope="row">Trascrizione Successione del 1/3/2013 presentata il 27/5/2015 inerenti i fogli
+                            2, 3, 5, 6, 7, 8,
                             38 e Mappa Urbana Del Comune di S.Felice Circeo.</th>
                         <td>{{myData.trascrizione_successione}}</td>
                     </tr>
                     <tr ng-show="myData.successione_2000">
-                        <th scope="row">Successione del 5 maggio 2000 eredi di Elena AGUET, coniugata in BLANC ed integrazioni</th>
+                        <th scope="row">Successione del 5 maggio 2000 eredi di Elena AGUET, coniugata in BLANC ed
+                            integrazioni</th>
                         <td>{{myData.successione_2000}}</td>
                     </tr>
                 </tbody>
@@ -191,8 +198,10 @@
         <div class="container" ng-show="flagFAQ">
             <h1 class="site-title">FAQ</h1>
             <table class="table table-bordered">
-                <h3> Nel riscontrare quesiti e perplessità più frequentemente espresse dagli interessati, sono state predisposte
-                    le seguenti domande del signor “Rossi” e relative risposte che, se pur generali, permettono al lettore
+                <h3> Nel riscontrare quesiti e perplessità più frequentemente espresse dagli interessati, sono state
+                    predisposte
+                    le seguenti domande del signor “Rossi” e relative risposte che, se pur generali, permettono al
+                    lettore
                     di avere una migliore indirizzo per incominciare a valutare le opportuno decisioni.</h3>
                 <thead>
                     <tr>
@@ -288,7 +297,7 @@
                 $scope.flagVisura = false;
                 $scope.flagErrore = false;
                 $scope.flagFAQ = false;
-                $scope.FAQ = [
+                $scope.FAQ_OLD = [
                     {
                         "1": "Sono il signor “ROSSI”, ho trovato che il bene che possiedo risulta che nella recente visura catastale è con “diritto di concedente” a favore di soggetti AGUET e BLANC: che vuol dire?",
                         "2": "Sono il signor “ROSSI”, il mio bene è stato sempre indicato in catasto quale soggetto al “diritto di concedente” a favore degli AGUET e BLANC. Se ad oggi non faccio nulla rimane tutto come è stato da più di 100 anni?",
@@ -320,6 +329,43 @@
                         "13": "Da un recente monitoraggio della problematica risulta che a seguito dell’acquisto del Feudo di San Felice, il barone Aguet James stipulò alcuni specifici contratti di enfiteusi ai primi del ‘900, mentre la maggior parte degli abitanti già da più di un secolo si trasmettevano tali beni (terre e case) sin da quando era proprietaria la Reverenda Camera Apostolica. Di conseguenza per questi proprietari (che sono la maggior parte) si tratterebbe di un diritto atipico del passato sul quale ad oggi è competente solo il giudice che è chiamato a stabilire se ci sia veramente Enfiteusi (obbligatoriamente attivato con apposito contenzioso). Spesso non si trovano mai le ricevute dei pagamenti del canone di questo diritto atipico e, quindi, gli AGUET avrebbero la difficoltà a dimostrare al giudice quanto vorrebbero. In tal modo si aprono molteplici scenari dove l’avvocato esperto costituzionalista ben sa dove andare a parare affinché il cittadino benefici dell’acquisizione dell’intera proprietà.",
                         "14": "Il comune di San Felice è un ente pubblico e per quanto tale può solo agire per difendere il suo patrimonio pubblico, non può spendere risorse per difendere la proprietà del privato, pertanto spetta al singolo cittadino decidere cosa fare o quali rischi correre. A questo va aggiunto che le cause accese tra Enti pubblici e privati possono durare oltre 30 anni – basti ricordarsi quanto è durata a San Felice la questione degli “usi Civici”. Si può solo dire che il comune potrebbe dare l’esempio ed essere lo “scopritore di quale sia la migliore azione legale da far seguire”.",
                         "15": "Tenendo conto che la problematica attualmente in corso riguarda il territorio dell'ex feudo di San Felice e che in alcuni testi redatti da studiosi è indicato che tale diritto atipico nascerebbe alla fine del 1700 quando la Reverenda Camera Apostolica amministrava tale territorio. Si dovrebbe considerare cosa intendeva in quel periodo la chiesa per tali diritti? Dalle circolari del “Buon Governo” - ante periodo Gregoriano, risulterebbero che esistevano i diritti Enfiteutici (diversi da quelli statuiti successivamente nel 1865), i livelli, i coloni perpetui, etc. Pertanto chi vorrà chiedere consiglio ad un legale specializzato dovrà indicare che l'asse eredi AGUET vanta un diritto enfiteutico e, quindi, di non sbagliare nell'indicare che si parla di un livello baronale anche se questo titolo di livello appare nelle visure catastali telematiche."
+                    }
+                ];
+
+                $scope.FAQ = [
+                    {
+                        "1": "Sono il signor “ROSSI”, vorrei sapere se gli immobili che ho in San Felice sono sottoposti a vincoli di livello e quindi se esisterebbe il titolo di concedente a favore degli eredi AGUET/BLANC?",
+                        "2": "Sono il signor “ROSSI”, ho trovato che il bene che possiedo nella recente visura catastale terreni risulta sottoposto a “diritto di concedente” a favore degli eredi AGUET/BLANC: che vuol dire?",
+                        "3": "Sono il signor “ROSSI”, il mio bene per generazioni è stato sempre indicato in catasto quale soggetto al “diritto di concedente” a favore degli AGUET e BLANC. Se ad oggi non faccio nulla rimane tutto come è stato da più di 100 anni, che succede?",
+                        "4": "Sono il signor “ROSSI”, e ho acquistato recentemente una villetta su due livelli con giardino ed ho accettato di versare una parte del costo al venditore livellario, mentre ho versato una somma sostanziosa all’asse eredi AGUET/BLANC firmando così una transazione. Oggi scopro che quanto versato è troppo rispetto a quello dovuto a seguito di recenti sentenze sulla materia, posso recuperare la somma che ho versato in più agli AGUET/BLANC?",
+                        "5": "Sono il signor “ROSSI”, sono stato in banca per chiedere un mutuo offrendo quale garanzia l’immobile che ho costruito in parte con regolare licenza negli anni ’60/70 e in parte abusivamente (poi condonato con l’apposita legge del 1987). L’istituto finanziario ha rifiutato la concessione del prestito motivando che il terreno su cui ho costruito non è il mio perché c’è il “livello baronale” e per diritto di accessione anche la casa non sarebbe la mia E’ possibile tutto ciò?",
+                        "6": "Sono il signor “ROSSI”, mi sono recato in banca per chiedere un prestito per aiutare mio figlio a realizzarsi. La banca mi ha rifiutato il prestito perché i beni che ho offerto a garanzia sono sottoposti a vincolo di “livello Baronale”. Uscendo dalla banca sono stato avvicinato da un privato finanziatore che mi aiuterebbe. Che devo fare?",
+                        "7": "Sono il signor “ROSSI”, avrei deciso di recarmi presso un consulente legale al fine di far cancellare il “livello baronale” quale documentazione o cosa devo portargli preliminarmente per incominciare a capire quale è la situazione e la soluzione migliore?",
+                        "8": "Sono il signor “ROSSI”, avrei deciso di sceglier un consulente legale per sapere come risolvere il mio caso nel quale risulto possessore di un terreno dove grava il “livello baronale” e dove ci ho costruito sopra la casa per me e i miei figli, siccome in Italia esistono vari gradi di giudizio, devo scegliere un avvocato con una particolare specializzazione?",
+                        "9": "Sono il signor “ROSSI”, ho ritirato presso il catasto il certificato storico di trasporto al 1926 e da tale documento risulta che il mio terreno a quel tempo non era gravato dal “Livello Baronale”, cosa vuol dire e che devo fare?",
+                        "10": "Sono il signor “ROSSI”, ho ritrovato nelle mio carteggio una sentenza di affrancazione fatta in passato sul mio terreno, cosa devo fare per far estinguere il vincolo del “Livello Baronale” che è stato riacceso sul bene recentemente?",
+                        "11": "Sono il signor “ROSSI”, ho trovato recentemente riacceso sul il mio terreno il vincolo del “Livello Baronale” nonostante lo abbia levato a seguito di una sentenza di usucapione emessa dal giudice competente, cosa devo fare?",
+                        "12": "Sono il signor “ROSSI”, ho trovato recentemente un atto dove mio nonno acquistò l’intera proprietà” dal Barone AGUET e nonostante ciò sul mio terreno è stato rimesso il vincolo del “Livello Baronale”, cosa devo fare?",
+                        "13": "Sono il signor “ROSSI”, ho trovato recentemente un atto dove mio nonna nel 1920 firmò un contratto di enfiteusi per una casa nel centro storico, allora dette “case camerali”. L’enfiteusi è istituita con atto di notaio firmato dal Barone AGUET. Oggi sull’appartamento mi trovo il vincolo del “Livello Baronale”, cosa devo fare?",
+                        "14": "Sono il signor “ROSSI”, vorrei sapere se esiste l’Enfiteusi nel comune di San Felice Circeo?",
+                        "15": "Sono il signor “ROSSI”, vorrei sapere se l’ente comunale può aprire un contenzioso contro l’asse AGUET/BLANC per difendere i diritti dei cittadini di San Felice Circeo?"
+                    },
+                    {
+                        "1": "Il diritto di Livello “Baronale” in San Felice (Salvo case del Centro storico) si rileva dalla visura ampliata fatta nel catasto Terreni. Pertanto molti possessori vengono ingannati dal fatto che facendo solo la visura sui fabbricati - oggi da loro acquistati o costruiti - non trovano nessun Livello. Purtroppo se il livello è gravante sul terreno, per diritto di accessione si sposta anche sui fabbricati, ma oggi il catasto questo non lo indica ed ecco perché i cittadini quando andranno a vendere un appartamento o chiedere un mutuo si troveranno che la banca lo negherà.",
+                        "2": "Ricordando che la visura catastale non ha valore di prova, ma ha il compito di indicare con delle annotazioni quale è l’atto o gli atti per il quale sono stati iscritti gli odierni soggetti che possiedono il bene. Sembrerebbe che Lei possieda un immobile sul quale, al momento, può vantare solo l’utile dominio mentre i soggetti AGUET e BLANC sembrerebbero detenere il diretto dominio, ovvero possiedono quello che oggi è molto simile alla “nuda proprietà”. In futuro avrà difficoltà a vendere per l’impossibilità di far accendere un mutuo.",
+                        "3": "Purtroppo le norme con il tempo si evolvono e mentre in passato era possibile che ogni singolo decideva di sottostare all’esistenza di una dubbia enfiteusi (che in molti casi sembrerebbe che non c’è, ma si deve dimostrarlo in Tribunale), oggi non è più così conveniente perché alcune agevolazioni sono state cancellate dalla Corte Costituzionale con l’aggiunta di costi maggiori. La recente trasformazione del diritto atipico di livello in “enfiteusi” di cui l’Agenzia delle Entrate” ha accettato successioni e trascrizioni tra il 2013 e il 2015 quali dichiarazioni unilaterali degli eredi AGUET/BLANC, sta’ permettendo di attualizzare un diritto valido in caso di liti tra gli eredi stessi, ma per essere valido verso terzi deve essere supportato da un “contratto” ovvero da atti che indichino: “la riscossione di un canone” e il congiunto obbligo di fare dei “miglioramenti” al bene oggetto del contratto (tanto dispone la Corte Costituzionale in attesa che sia fatta una norma per il caso). In altri casi similari scoppiati in Italia è stato chiesto, da ex nobili o altri soggetti, che i cittadini possessori riprendessero a pagare l’affitto (canone) anche su case costruite interamente dal malcapitato. La materia è molto articolata e si presta a varie soluzioni. Solo attraverso uno studio accurato si potrà trovare una giusta strada, ma nel frattempo il cittadino corre molti rischi che in passato non c’erano. Il consiglio è incominciare da subito a muoversi con il trovare ogni atto di provenienza nel tempo redatto per i passaggi di proprietà avvenuti per il bene interessato.",
+                        "4": "Avendo fatto una transazione non può recuperare eventuali somme versate in più, salvo che l’accordo sottoscritto non lo preveda per in una clausola espressamente prevista. Avendo versato volontariamente una somma agli eredi AGUET/BLANC si spera che ci sia stata a monte una tutela ad opera di un Suo avvocato. ATTENZIONE! Stesso dicasi se si facesse una transazione poi ritenuta onorata con il versamento di una somma corrisposta troppo bassa. Non sarà possibile annullare l’accordo. ATTENZIONE a cosa si firma in questi casi e mai accettare senza l’assistenza di un consulente legale specializzato Quanto sopra non accade se la somma è stabilita da un giudice a seguito di un contenzioso che va’ a statuire in primis se esiste il diritto di livello e poi, in caso della conferma della sua esistenza, stabilisce quanto si debba versare.",
+                        "5": "La banca si è comportata correttamente in quanto Lei garantirebbe un prestito con un immobile che per quanto prevede la norma è stato costruito su un terreno che non è Suo e, quindi, tutto ciò che si costruisce su un terreno diventa per diritto di accessione di proprietà di colui che lo ha in proprietà, nuda proprietà, diretto dominio, diritto del concedente, ecc. . In questo caso, il diritto assimilato alla “nuda proprietà” ovvero l’immobile sarebbe diventato di proprietà dei concedente eredi AGUET/BLANC Se vorrà accedere alla concessione del prestito richiesto dovrà prima risolvere il problema attraverso un legale che saprà consigliarla al meglio, ma sempre dopo aver consultato gli atti di provenienza redatti nel tempo sul terreno in questione.",
+                        "6": "Gentile signor Rossi, salvo un rarissimo se non impossibile caso in cui lei abbia incontrato un vero benefattore, Le consigliamo di soprassedere. Infatti Lei potrebbe incappare nel problema per il quale ad oggi risulterebbe che la Provincia di Latina è una delle più martoriate dal fenomeno dell’USURA. Purtroppo il problema non vede nessuna soluzione politica in quanto si continua a mantenere i vecchi istituti medioevali tra i quali il livelli baronali, gli usi civici e altri diritti atipici. Senza le opportune norme si permette la proliferazione di organizzazioni criminali dedite a prestare denari ad elevati tassi d’interesse. Da ultimo si cita l’ulteriore ed infelice normativa recentemente approvata sugli usi civici – nr. 168/2017 che non farà altro che continuare a far riempire le tasche a organizzazioni illecite. Si consiglia di essere molto accorti e di seguire sempre canali di finanziamento alla luce del sole e di certa legalità.",
+                        "7": "Innanzi tutto deve portare la copia dell’atto con il quale Lei ha acquisito l’odierno titolo di possesso o proprietà (atto di compravendita/o atto di successione per causa di morte, assegnazione d’asta, ecc.) e deve portare il certificato catastale di “trasporto” a decorrere dall’anno 1926. Quest’ultimo documento non lo deve confondere con il certificato storico catastale ordinario che non ha alcun valore e quindi non è utile per le sue decisioni.",
+                        "8": "A causa di alcune sentenze della “Corte Costituzionale”, i livelli baronali che in passato potevano essere riscatti con poche lire, oggi sono stati rivalutati e, pertanto, è più costoso eliminarli – ATTENZIONE: sempreché il giudice incaricato a risolvere la questione decida che tale diritto di livello è riconducibile all’enfiteusi, ovvero esista o diversamente si accerti qualcos’altro. Pertanto è opportuno avvalersi di un avvocato o studio legale che oltre ad essere specializzato in Cassazione, sia anche specializzato Costituzionalista in quanto, mancando in molti aspetti una norma certa, ad oggi si devono applicare i disposti della Corte Costituzionale. A queste norme in “vacatio” si possono aggiungere le leggi europee in materia di armonizzazione delle norme tra gli stati membri. Questo perché, data la complessità della materia, iniziare una causa col vantare diritti già resi nulli dalla Corte Costituzionale significherebbe perdere già in partenza il contenzioso anche se si andasse in appello e poi in cassazione (purtroppo, il cittadino pur avendo ragione, perde la causa perché spesso sceglie la via sbagliata e questo accade spesso).",
+                        "9": "Gli eredi AGUET hanno commesso un errore, probabilmente una svista, quindi, dopo aver ritrovato gli atti redatti sulla Sua proprietà stipulati dal 1926 in poi e dove mai appare la costituzione di una enfiteusi, tramite il legale di fiducia dovrà richiedere agli eredi la correzione della successione e della errata voltura catastale. Si consiglia di fare ciò il prima possibile.",
+                        "10": "Nel caso sia stata fatta in passato una “affrancazione”, gli atti che sono stati emessi dal giudice competente vanno controllati dal legale di fiducia perché alcuni di questi sono assoggettati a delle particolari procedure successive all’emissione della decisione giudiziale. In questi casi se non successivamente eseguite tali procedure, queste possono rendere nulla la sentenza di affrancazione (pur avendo versato delle somme e mai restituite, ad oggi non sono servite a nulla). Nel caso di nullità si dovrà scegliere quale sia la migliore soluzione legale sempre ripartendo dal trovare i documenti di provenienza e farsi fare un nuovo certificato storico catastale di trasporto al 1926 il tutto per far meglio capire la situazione al proprio avvocato. Qualora l’atto di affrancazione risultasse valido si dovrà opporlo e richiedere all’asse eredi AGUET di correggere la successione e le volture catastali.",
+                        "11": "Nel caso sia stata già emessa una sentenza di “usucapione”, per l’effetto di successive sentenze della Corte Costituzionale è avvenuto che alcune tipologie di usucapione sono “annullabili”, nel suo caso dovrebbe aver ricevuto l’avviso di costituzione di un contenzioso o una sentenza che ha annullato l’usucapione. Se questo non esiste, tramite l’assistenza di un legale di fiducia dovrà procedere a far cancellare la riaccensione, si consiglia di operare il prima possibile.",
+                        "12": "Gli eredi AGUET hanno commesso un errore, probabilmente una svista, quindi, tramite il legale di fiducia è necessario richiedere la correzione della successione e della voltura catastale.",
+                        "13": "Innanzi tutto deve controllare bene a cosa si riferisce il contratto in quanto le case nel centro storico di allora erano composte da una stanza tutto usi (ingresso, salone, cucina, ecc.) e di una sola camera da letto per un totale di 1,5 vani. Pertanto se ad oggi Lei ha più di due vani e possibile che l’immobile sia il risultato della fusione di due vecchi appartamentini e potrebbe essere che solo su uno di essi esiste il contratto di enfiteusi. Qualora l’enfiteusi risultasse confermata è opportuno esibire il contratto richiedendo l’affrancazione che in questo caso non è esosa visto le basse rendite catastali del centro storico, ovvero le esigue dimensioni determinano un valore base OMI ridotto che poi va’ poi rettificato in base alle condizioni effettive del bene. L’attuale crisi economica aiuterebbe a determinare una affrancazione più bassa. Comunque dovrà sempre rivolgersi ad un legale di fiducia con l’ausilio dell’ultimo atto di provenienza e il certificato storico di trasporto catastale all’anno 1926.",
+                        "14": "Da un recente monitoraggio della problematica risulta che a seguito dell’acquisto del Feudo di San Felice, il barone Aguet James stipulò alcuni specifici contratti di enfiteusi ai primi del ‘900, mentre la maggior parte degli abitanti già da più di un secolo si trasmettevano da padre in figlio tali beni (terre e case) vincolate da diritti atipici e sin da quando era proprietaria la Reverenda Camera Apostolica. Di conseguenza per questi proprietari (che sono la maggior parte) si tratterebbe di un diritto atipico del passato sul quale ad oggi è competente solo il giudice che è chiamato a stabilire se ci sia veramente Enfiteusi (obbligatoriamente attivato con apposito contenzioso). In alcune proprietà non esisterebbe l’enfiteusi come si evince da atti di ricognizione tecnica di cui l’ultimo risale ben ai primi del 1800. Nel sopra caso non esiste alcuna ricevute dei pagamenti del canone enfiteutico e, quindi, gli AGUET/BLANC avrebbero difficoltà a dimostrare al giudice quanto pretenderebbero. In tal modo si aprono molteplici scenari dove l’avvocato esperto ben sa dove andare a parare affinché il cittadino benefici dell’acquisizione dell’intera proprietà nella maniera più agevolata possibile.",
+                        "15": "Il comune di San Felice è un ente pubblico e per quanto tale può solo agire per difendere il suo patrimonio che è composto da beni pubblici demaniali o assimilati (usi civici). Pertanto il comune non può spendere risorse per difendere la proprietà del privato, pertanto spetta al singolo cittadino decidere cosa fare. A quanto sopra va’ aggiunto che le cause accese tra Enti pubblici e privati possono durare per decine di anni – basti ricordarsi quanto è durata a San Felice la questione degli “usi Civici” della zona detta “delle Vetiche”.",
                     }
                 ];
             };
