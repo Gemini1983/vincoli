@@ -1,6 +1,6 @@
 {
   "db": {
-    "url":"mongodb://mail.annunziata:Iniziale.1@ds149122.mlab.com:49122/vincoli",
+    "url":"mongodb://webusr:wmLf6Uu00t3WRuAT@vincoli-shard-00-00.upvff.mongodb.net:27017,vincoli-shard-00-01.upvff.mongodb.net:27017,vincoli-shard-00-02.upvff.mongodb.net:27017/vincoli?ssl=true&replicaSet=atlas-vmzue4-shard-0&authSource=admin&retryWrites=true&w=majority",
     "connector": "mongodb"
   }
 }
