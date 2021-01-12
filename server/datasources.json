@@ -1,6 +1,6 @@
 {
   "db": {
-    "url":"mongodb://testusr:iniziale@ds149122.mlab.com:49122/vincoli",
+    "url":"mongodb://mail.annunziata:Iniziale.1@ds149122.mlab.com:49122/vincoli",
     "connector": "mongodb"
   }
 }
