@@ -388,13 +388,13 @@
                 $scope.flagLoader = true;
                 var call2 = {
                     method: "GET",
-                    url: "https://ill-plum-turtle-vest.cyclic.app/api/vincoli?filter={\"where\":{\"and\":[{\"foglio\":" + foglio + "},{\"particella\":" + particella + "}]}}"
+                    url: "http://localhost:3000/api?foglio=" + foglio + "&particella=" + particella
                 };
                 $http(call2).then(function (response) {
-                    var array = response.data;
-                    if (typeof array != "undefined" && array != null && array.length > 0) {
+                    var data = response.data;
+                    if (data != null && typeof data === 'object' && Object.keys(data).length > 0) {
                         $scope.flagLoader = false;
-                        $scope.myData = response.data[0];
+                        $scope.myData = data; // Assegna direttamente l'oggetto a myData
                         $scope.flagInput = false;
                         $scope.flagVisura = true;
 
